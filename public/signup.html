@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JEWELIA | Sign Up</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      background-color: #f8f2e8;
+    }
+
+    header {
+      background-color: #7b0f2b;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #f5e6c8;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #f5e6c8;
+      margin-left: 25px;
+    }
+
+    .signup-section {  
+      padding: 120px 20px;
+      text-align: center;
+
+      background-image:
+        linear-gradient(rgba(248, 242, 232, 0.05), rgba(248, 242, 232, 0.05)),
+        url("bg-login.jpeg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .signup-box {
+      background-color: white;
+      width: 350px;
+      margin: auto;
+      padding: 40px;
+      border: 1px solid #e3d5c0;
+    }
+
+    .signup-box h2 {
+      font-family: 'Playfair Display', serif;
+      color: #7b0f2b;
+      margin-bottom: 25px;
+    }
+
+    .signup-box input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+    }
+
+    .signup-box button {
+      width: 100%;
+      padding: 10px;
+      background-color: #7b0f2b;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #5a0c20;
+      color: #f5e6c8;
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">JEWELIA</div>
+</header>
+
+<div class="signup-section">
+
+  <div class="signup-box">
+    <h2>Create Account</h2>
+
+    <form action="/signup" method="POST">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="password" name="password" placeholder="Create Password" required>
+    
+    <button type="submit">Create Account</button>
+</form>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 JEWELIA. All rights reserved.
+</footer>
+
+</body>
+</html>

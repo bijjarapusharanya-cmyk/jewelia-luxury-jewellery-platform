@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JEWELIA | Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family:'Poppins', sans-serif;
+  background:#f8f2e8;
+  color:#2a2a2a;
+}
+
+header {
+  background:#7b0f2b;
+  padding:22px 80px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo {
+  font-family:'Playfair Display', serif;
+  font-size:30px;
+  color:#f5e6c8;
+  letter-spacing:4px;
+}
+
+nav a {
+  color:#f5e6c8;
+  margin-left:30px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+
+.hero {
+  padding: 155px 80px;
+  text-align: center;
+
+  background-image:
+    linear-gradient(rgba(248,242,232,0.85), rgba(248,242,232,0.85)),
+    url("background .jpeg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero h1 {
+  font-family:'Playfair Display', serif;
+  font-size:42px;
+  color:#7b0f2b;
+}
+
+.form-section {
+  padding:100px;
+  max-width:600px;
+  margin:auto;
+}
+
+form input, form textarea {
+  width:100%;
+  padding:12px;
+  margin-bottom:20px;
+  border:1px solid #ccc;
+  font-family:'Poppins', sans-serif;
+}
+
+form button {
+  padding:12px 30px;
+  background:#7b0f2b;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+/* Styling the Form Container */
+.appointment-form {
+    max-width: 400px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Styling all Inputs and the Select Dropdown */
+.jewelia-input {
+    padding: 12px;
+    border: 1px solid #d4a373; /* Gold/Bronze border */
+    border-radius: 5px;
+    font-family: 'Georgia', serif;
+    background-color: #fffdfa;
+    color: #4a0e0e;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Specific styling for the Dropdown (Select) */
+.jewelia-select {
+    cursor: pointer;
+    background-image: linear-gradient(45deg, transparent 50%, #7b0f2b 50%), 
+                      linear-gradient(135deg, #7b0f2b 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px), 
+                         calc(100% - 15px) calc(1em + 2px);
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    appearance: none; /* Removes default browser styling */
+}
+
+.jewelia-input:focus {
+    border-color: #7b0f2b;
+    box-shadow: 0 0 5px rgba(123, 15, 43, 0.2);
+}
+
+/* The Maroon "Jewelia" Button */
+.jewelia-btn {
+    background-color: #7b0f2b;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.jewelia-btn:hover {
+    background-color: #4a0e0e;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+footer {
+  background:#5a0c20;
+  color:#f5e6c8;
+  text-align:center;
+  padding:26px;
+  font-size:13px;
+}
+
+@media (max-width:900px){
+  header, .hero, .form-section {
+    padding:40px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">JEWELIA</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="legacy.html">Legacy</a>
+    <a href="contact.html">Contact</a>
+    <a href="profile.html" id="profileLink" class="btn">My Profile</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Book a Private Appointment</h1>
+  <p>Experience JEWELIA in a personalized setting.</p>
+</section>
+
+<section class="form-section">
+ <form action="/appointment" method="POST" class="appointment-form">
+    <input type="text" name="name" placeholder="Your Name" required class="jewelia-input">
+    <input type="date" name="date" required class="jewelia-input">
+    
+    <select name="jewellery" class="jewelia-input jewelia-select">
+        <option value="" disabled selected>Select Collection Type</option>
+        <option value="Temple Jewellery">Temple Jewellery</option>
+        <option value="Minimal Jewellery">Minimal Jewellery</option>
+        <option value="Festive Jewellery">Festive Jewellery</option>
+        <option value="Bridal Jewellery">Bridal Jewellery</option>
+    </select>
+    
+    <button type="submit" class="jewelia-btn">Book Appointment</button>
+</form>
+</section>
+
+<footer>
+  © 2026 JEWELIA. All rights reserved.
+</footer>
+
+</body>
+</html>

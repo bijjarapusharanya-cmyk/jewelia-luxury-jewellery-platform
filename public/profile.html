@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jewelia - My Profile</title>
+    <style>
+        body { 
+            background-color: #fcf9f5; 
+            font-family: 'Georgia', serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+        .profile-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            border: 1px solid #d4a373; 
+            text-align: center; 
+            width: 350px; 
+        }
+        .avatar { 
+            width: 80px; 
+            height: 80px; 
+            background: #7b0f2b; 
+            color: white; 
+            border-radius: 50%; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            font-size: 30px; 
+            margin: 0 auto 20px; 
+        }
+        h1 { color: #7b0f2b; margin: 0; }
+        p { color: #666; margin-bottom: 30px; }
+        .btn { 
+            display: block; 
+            text-decoration: none; 
+            padding: 12px; 
+            margin: 10px 0; 
+            border-radius: 5px; 
+            font-weight: bold; 
+        }
+        .home-btn { background: #7b0f2b; color: white; }
+        .logout-btn { border: 1px solid #7b0f2b; color: #7b0f2b; }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+    <div class="avatar" id="userInitial">S</div>
+    <h1 id="userName">Welcome!</h1>
+    <p id="userEmailSubtext" style="color: #666; font-style: italic; margin-bottom: 25px;">
+        loading email...
+    </p> 
+    
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+    <a href="index.html" class="btn home-btn">Continue to Jewelia</a>
+    <a href="/" class="btn logout-btn">Logout</a>
+</div>
+<script>
+    window.onload = function() {
+        const params = new URLSearchParams(window.location.search);
+        
+        // 1. Try to get data from URL
+        let name = params.get('name');
+        let email = params.get('email');
+
+        // 2. If URL is empty, try to get it from browser memory (localStorage)
+        if (!name) name = localStorage.getItem('jewelia_name');
+        if (!email) email = localStorage.getItem('jewelia_email');
+
+        if (name && email) {
+            // 3. Save it for next time
+            localStorage.setItem('jewelia_name', name);
+            localStorage.setItem('jewelia_email', email);
+
+            // 4. Update the UI
+            document.getElementById('userName').innerText = "Welcome, " + name + "!";
+            document.getElementById('userEmailSubtext').innerText = email;
+            document.getElementById('userInitial').innerText = name.charAt(0).toUpperCase();
+
+            // 5. Update the "Continue" link
+            const homeBtn = document.querySelector('.home-btn');
+            if (homeBtn) homeBtn.href = `index.html?name=${name}&email=${email}`;
+        } else {
+            document.getElementById('userEmailSubtext').innerText = "Not Logged In";
+        }
+    };
+
+    // Clear memory on logout
+    document.querySelector('.logout-btn').onclick = function() {
+        localStorage.clear();
+    };
+</script>
+</body>
+</html>
